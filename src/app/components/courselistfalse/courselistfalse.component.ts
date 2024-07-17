@@ -1,28 +1,43 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../../services/course.service';
 import { Course } from '../../models/course.model';
 
 @Component({
   selector: 'app-courselistfalse',
   templateUrl: './courselistfalse.component.html',
-  styleUrl: './courselistfalse.component.css'
+  styleUrls: ['./courselistfalse.component.css']
 })
-export class CourselistfalseComponent {
-    courses: Course[] = [];
+export class CourselistfalseComponent implements OnInit {
+  courses: Course[] = [];
 
-      constructor(private courseService: CourseService) {}
+  constructor(private courseService: CourseService) {}
 
-      ngOnInit(): void {
-          this.courseService.getCourses().subscribe((data: Course[]) => {
-            console.log('Fetched courses:', data); // Debugging line to check the fetched data
-            this.courses = data.filter(course => !course.approved);
-            console.log('Filtered courses:', this.courses); // Debugging line to check the filtered data
-          });
+  ngOnInit(): void {
+    this.fetchCourses();
+  }
+
+  fetchCourses(): void {
+    this.courseService.getCourses()
+      .subscribe((data: Course[]) => {
+        console.log('Fetched courses:', data);
+        this.courses = data.filter(course => !course.approved);
+        console.log('Filtered courses:', this.courses);
+      });
+  }
+
+  approveNow(courseId: number): void {
+    console.log(`Approving course with ID: ${courseId}`);
+    this.courseService.approveCourse(courseId)
+      .subscribe({
+        next: () => {
+          console.log(`Course ${courseId} approved successfully.`);
+          // Fetch the updated list of courses after approval
+          this.fetchCourses();
+        },
+        error: (error) => {
+          console.error('Error approving course:', error);
+          // Handle error scenarios, such as displaying an error message
         }
-
-      approvenow(course: any) {
-          // Logic to handle enrollment
-          console.log(`Approved: ${course.courseTitle}`);
-          // Implement your enrollment logic here, such as navigating to a new page or displaying a message.
-        }
+      });
+  }
 }
