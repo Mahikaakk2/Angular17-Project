@@ -17,6 +17,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CourseliststudentComponent } from './components/courseliststudent/courseliststudent.component';
 import { CourseService } from './services/course.service';
 import { CourselistfalseComponent } from './components/courselistfalse/courselistfalse.component';
+import { MentorListComponent } from './components/mentor-list/mentor-list.component';
+import { NewJoinerListComponent } from './components/new-joiner-list/new-joiner-list.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { CourselistfalseComponent } from './components/courselistfalse/courselis
     HeaderComponent,
     FooterComponent,
     CourseliststudentComponent,
-    CourselistfalseComponent
+    CourselistfalseComponent,
+    MentorListComponent,
+    NewJoinerListComponent
   ],
   imports: [
     BrowserModule,

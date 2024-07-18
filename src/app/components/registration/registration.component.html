@@ -11,7 +11,7 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="bold-label">First Name : <b style="color:red;">*</b></label>
-                  <input type="text" class="form-control" placeholder="first name *" name="firstname" [(ngModel)]="employee.firstname" required
+                  <input type="text" class="form-control" placeholder="first name *" name="firstname" [(ngModel)]="employee.firstName" required
                   #firstname="ngModel"
                   [class.is-invalid]="firstname.invalid && firstname.touched">
                   <small class="text-danger" [class.d-none]="firstname.valid || firstname.untouched"><b>required field</b></small>
@@ -19,7 +19,7 @@
 
                 <div class="form-group">
                   <label class="bold-label">Last Name : <b style="color:red;font-weight:bold">*</b></label>
-                  <input type="text" class="form-control" placeholder="lastname *" name="lastname" [(ngModel)]="employee.lastname" required
+                  <input type="text" class="form-control" placeholder="lastname *" name="lastname" [(ngModel)]="employee.lastName" required
                   #lastname="ngModel"
                   [class.is-invalid]="lastname.invalid && lastname.touched">
                   <small class="text-danger" [class.d-none]="lastname.valid || lastname.untouched"><b>required field</b></small>
