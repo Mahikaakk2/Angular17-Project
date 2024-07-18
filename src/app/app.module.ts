@@ -18,6 +18,8 @@ import { CourseliststudentComponent } from './components/courseliststudent/cours
 import { CourseService } from './services/course.service';
 import { CourselistfalseComponent } from './components/courselistfalse/courselistfalse.component';
 import { StudentQueriesComponent } from './components/student-queries/student-queries.component';
+import { MentorListComponent } from './components/mentor-list/mentor-list.component';
+import { NewJoinerListComponent } from './components/new-joiner-list/new-joiner-list.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,9 @@ import { StudentQueriesComponent } from './components/student-queries/student-qu
     CourseliststudentComponent,
     CourselistfalseComponent,
     StudentQueriesComponent
+    CourselistfalseComponent,
+    MentorListComponent,
+    NewJoinerListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,18 @@
+<app-header></app-header>
+<div class="container">
+  <h2 class="heading-text">New Joiner List</h2>
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let newJoiner of newJoiners">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <h3 class="card-title">{{ newJoiner.firstName }} {{ newJoiner.lastName }}</h3>
+          <p class="card-text">{{ newJoiner.email }}</p>
+          <p><strong>Role:</strong> {{ newJoiner.role }}</p>
+          <p><strong>Mobile:</strong> {{ newJoiner.mobileNumber }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
