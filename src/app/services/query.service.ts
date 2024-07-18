@@ -8,7 +8,7 @@ import { Query } from '../models/query.model';
   providedIn: 'root'
 })
 export class QueryService {
-  private apiUrl = 'http://localhost:8070/api/fetchByStatus';
+  private apiUrl = 'http://localhost:8070/api/fetchAll';
 
   constructor(private http: HttpClient) {}
 

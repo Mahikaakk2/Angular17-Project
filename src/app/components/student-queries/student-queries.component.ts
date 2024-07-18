@@ -16,8 +16,8 @@ export class StudentQueriesComponent implements OnInit{
     ngOnInit(): void {
         this.queryService.getQueries().subscribe((data: Query[]) => {
           console.log('Fetched queries:', data); // Debugging line to check the fetched data
-          this.queries = data.filter(query => query.status);
-          console.log('Filtered queries:', this.queries); // Debugging line to check the filtered data
+          this.queries = data;
+          //console.log('Filtered queries:', this.queries); // Debugging line to check the filtered data
         });
       }
 }
