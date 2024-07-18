@@ -17,6 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CourseliststudentComponent } from './components/courseliststudent/courseliststudent.component';
 import { CourseService } from './services/course.service';
 import { CourselistfalseComponent } from './components/courselistfalse/courselistfalse.component';
+import { StudentQueriesComponent } from './components/student-queries/student-queries.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CourselistfalseComponent } from './components/courselistfalse/courselis
     HeaderComponent,
     FooterComponent,
     CourseliststudentComponent,
-    CourselistfalseComponent
+    CourselistfalseComponent,
+    StudentQueriesComponent
   ],
   imports: [
     BrowserModule,
